@@ -1,71 +1,59 @@
 import React, { useState } from 'react';
-import "./HousingCosts.css"; // Import the CSS file for styling
 
-const HousingCosts = () => {
-  const [formData, setFormData] = useState({
-    Rent: '',
-    CouncilTax: '',
-    Gas: '',
-    Water: '',
-    Electricity: '',
-    Internet: '',
-    Maintenance: '',
-    Insurance: '',
-    Other: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+const HousingCosts = ({ initialValues, onSubmit, onNext }) => {
+  const [rent, setRent] = useState(initialValues.rent || '');
+  const [utilities, setUtilities] = useState(initialValues.utilities || '');
+  const [water, setWater] = useState(initialValues.water || '');
+  const [internet, setInternet] = useState(initialValues.internet || '');
+  const [councilTax, setCouncilTax] = useState(initialValues.councilTax || '');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Housing cost Data', formData);
-  };
-
-  const calculateTotal = () => {
-    const { Rent, CouncilTax, Gas, Water, Electricity, Internet, Maintenance, Insurance, Other } = formData;
-    return (
-      parseFloat(Rent || 0) +
-      parseFloat(CouncilTax || 0) +
-      parseFloat(Gas || 0) +
-      parseFloat(Water || 0) +
-      parseFloat(Electricity || 0) +
-      parseFloat(Internet || 0) +
-      parseFloat(Maintenance || 0) +
-      parseFloat(Insurance || 0) +
-      parseFloat(Other || 0)
-    );
+    const data = {
+      rent: parseFloat(rent),
+      utilities: parseFloat(utilities),
+      water: parseFloat(water),
+      internet: parseFloat(internet),
+      councilTax: parseFloat(councilTax),
+    };
+    onSubmit(data); // Pass the data back to ManageBills
+    onNext(); // Move to the next component
   };
 
   return (
-    <div className="housingCosts">
-      <h2>Housing Costs</h2>
-      <form onSubmit={handleSubmit}>
-        {['Rent', 'CouncilTax', 'Gas', 'Water', 'Electricity', 'Internet', 'Maintenance', 'Insurance', 'Other'].map(field => (
-          <div className="inputContainer" key={field}>
-            <label>
-              {field.replace(/([A-Z])/g, ' $1').trim()}:
-              <input
-                type="number"
-                name={field}
-                value={formData[field]}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-        ))}
-        <button type="submit">Submit</button>
-        <hr />
-        <div className="total">
-          <h3>Total: {calculateTotal()}</h3>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>Rent:</label>
+      <input
+        type="number"
+        value={rent}
+        onChange={(e) => setRent(e.target.value)}
+      />
+      <label>Utilities:</label>
+      <input
+        type="number"
+        value={utilities}
+        onChange={(e) => setUtilities(e.target.value)}
+      />
+      <label>Water:</label>
+      <input
+        type="number"
+        value={water}
+        onChange={(e) => setWater(e.target.value)}
+      />
+      <label>Internet:</label>
+      <input
+        type="number"
+        value={internet}
+        onChange={(e) => setInternet(e.target.value)}
+      />
+      <label>Council Tax:</label>
+      <input
+        type="number"
+        value={councilTax}
+        onChange={(e) => setCouncilTax(e.target.value)}
+      />
+      <button type="submit">Next</button>
+    </form>
   );
 };
 

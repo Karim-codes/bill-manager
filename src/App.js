@@ -1,18 +1,5 @@
-
-// import './App.css';
-// import Navbar from './Component/Navbar';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Navbar />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import * as React from "react";
+// App.js
+import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,49 +10,38 @@ import Footer from "./Component/Footer";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import ManageBills from "./Pages/Manage-Bill/ManageBills";
-import "./App.css"
 import Login from "./Component/Login";
 
+import "./App.css";
 
-const Layout = () => {
-    return(
-      <div className="app">
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </div>
-    )
-}
+const Layout = () => (
+  <div className="app">
+    <Navbar />
+    <Outlet />
+    <Footer />
+  </div>
+);
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children:[
-      {
-        path:"/",
-        element: <Home />
-      },
-      {
-        path:"/AboutUS",
-        element: <About />
-      },
-      {
-        path:"/ManageBills",
-        element: <ManageBills />
-      },
-      {
-        path:"/Login",
-        element: <Login />
-      }
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/AboutUS", element: <About /> },
+      { path: "/ManageBills", element: <ManageBills /> },
+      { path: "/Login", element: <Login /> }
     ]
   },
 ]);
 
+
 function App() {
   return (
-    <RouterProvider router={router} />
-  )
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

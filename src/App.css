@@ -1,4 +1,12 @@
-body{
-padding: 0px 0px 0px 0px;
-background: #938f8f;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 100%; /* Ensures no overflow */
 }

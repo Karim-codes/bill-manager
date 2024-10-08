@@ -1,97 +1,96 @@
 .outGoings {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .outGoings h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .outGoings form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .outGoings .inputContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .outGoings label {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .outGoings input {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.outGoings h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.outGoings form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.outGoings .inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.outGoings label {
+  font-size: 16px;
+  color: #555;
+}
+
+.outGoings input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.outGoings input:focus {
+  border-color: #008CBA;
+  outline: none;
+}
+
+.outGoings button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #008CBA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.outGoings button[type="submit"]:hover {
+  background-color: #007B9E;
+}
+
+.outGoings .total {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .outGoings {
     padding: 10px;
+    box-shadow: none;
+  }
+
+  .outGoings h2 {
+    font-size: 20px;
+  }
+
+  .outGoings label {
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
   }
-  
-  .outGoings input:focus {
-    border-color: #008CBA;
-    outline: none;
+
+  .outGoings input {
+    font-size: 12px;
   }
-  
+
   .outGoings button[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #008CBA;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  
-  .outGoings button[type="submit"]:hover {
-    background-color: #007B9E;
-  }
-  
+
   .outGoings .total {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-    color: #333;
+    margin-top: 10px;
+    font-size: 16px;
   }
-  
-  /* Mobile Styles */
-  @media (max-width: 600px) {
-    .outGoings {
-      padding: 10px;
-      box-shadow: none;
-    }
-  
-    .outGoings h2 {
-      font-size: 20px;
-    }
-  
-    .outGoings label {
-      font-size: 14px;
-    }
-  
-    .outGoings input {
-      font-size: 12px;
-    }
-  
-    .outGoings button[type="submit"] {
-      font-size: 14px;
-      padding: 8px 16px;
-    }
-  
-    .outGoings .total {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-  }
-  
+}

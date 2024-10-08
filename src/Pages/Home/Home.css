@@ -1,50 +1,49 @@
 .home {
-    background: #f0f0f0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
+  background: #f0f0f0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home h1 {
+  font-size: 2.5rem; /* Use rem for better scaling */
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.button-link {
+  text-decoration: none;
+}
+
+.button-link button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-style: italic;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: black;
+  background-color: #cbd1cb;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-link button:hover {
+  color: white;
+  background-color: #007B9E;
+}
+
+@media (max-width: 768px) {
   .home h1 {
-    font-size: 35px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-  
-  .button-link {
-    text-decoration: none;
-  }
-  
+
   .button-link button {
-    padding: 10px 20px;
-    font-size: 22px;
-    font-style: italic;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    color: black;
-    background-color: #cbd1cb;
-    border: none;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 8px 16px;
   }
-  
-  .button-link button:hover {
-    color: white;
-    background-color: #007B9E;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    .home h1 {
-      font-size: 28px;
-    }
-  
-    .button-link button {
-      font-size: 18px;
-      padding: 8px 16px;
-    }
-  }
-  
+}
